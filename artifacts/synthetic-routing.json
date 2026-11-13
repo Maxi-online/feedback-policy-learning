@@ -1,0 +1,110 @@
+{
+  "task": "synthetic independent one-step routing; target = argmax(first four features)",
+  "scope": "Algorithm learning check only; no production or conversation-quality conclusion",
+  "split": "Independent seeded train/test generators; no test-driven tuning in this run",
+  "environment": {
+    "python": "3.14.2",
+    "torch": "2.9.1+cpu",
+    "platform": "Windows-11-10.0.26340-SP0",
+    "device": "cpu",
+    "torch_threads": 1
+  },
+  "runs": [
+    {
+      "seed": 7,
+      "training_samples": 4096,
+      "held_out_samples": 2048,
+      "mean_test_reward": {
+        "categorical_ppo": 0.91748046875,
+        "uniform_random": 0.2509765625,
+        "training_majority_action": 0.26513671875,
+        "known_rule_oracle": 1.0
+      },
+      "last_update": {
+        "policy_loss": -0.038936592638492584,
+        "value_loss": 0.08121861517429352,
+        "entropy": 0.1843094825744629,
+        "gradient_norm_before_clipping": 0.5379881262779236,
+        "approx_kl": 0.014714960940182209,
+        "clip_fraction": 0.078125
+      },
+      "config": {
+        "state_dim": 12,
+        "action_dim": 4,
+        "hidden_dim": 64,
+        "learning_rate": 0.003,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "clip_epsilon": 0.2,
+        "entropy_coefficient": 0.01,
+        "value_coefficient": 0.5,
+        "max_gradient_norm": 0.5,
+        "epochs": 4
+      }
+    },
+    {
+      "seed": 19,
+      "training_samples": 4096,
+      "held_out_samples": 2048,
+      "mean_test_reward": {
+        "categorical_ppo": 0.8984375,
+        "uniform_random": 0.25,
+        "training_majority_action": 0.2373046875,
+        "known_rule_oracle": 1.0
+      },
+      "last_update": {
+        "policy_loss": -0.059420712292194366,
+        "value_loss": 0.1406743973493576,
+        "entropy": 0.2729435861110687,
+        "gradient_norm_before_clipping": 0.611319899559021,
+        "approx_kl": 0.022795848548412323,
+        "clip_fraction": 0.1171875
+      },
+      "config": {
+        "state_dim": 12,
+        "action_dim": 4,
+        "hidden_dim": 64,
+        "learning_rate": 0.003,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "clip_epsilon": 0.2,
+        "entropy_coefficient": 0.01,
+        "value_coefficient": 0.5,
+        "max_gradient_norm": 0.5,
+        "epochs": 4
+      }
+    },
+    {
+      "seed": 43,
+      "training_samples": 4096,
+      "held_out_samples": 2048,
+      "mean_test_reward": {
+        "categorical_ppo": 0.92431640625,
+        "uniform_random": 0.25244140625,
+        "training_majority_action": 0.25048828125,
+        "known_rule_oracle": 1.0
+      },
+      "last_update": {
+        "policy_loss": -0.04595022648572922,
+        "value_loss": 0.1203533485531807,
+        "entropy": 0.1725093424320221,
+        "gradient_norm_before_clipping": 0.4362487494945526,
+        "approx_kl": 0.012731647118926048,
+        "clip_fraction": 0.0859375
+      },
+      "config": {
+        "state_dim": 12,
+        "action_dim": 4,
+        "hidden_dim": 64,
+        "learning_rate": 0.003,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "clip_epsilon": 0.2,
+        "entropy_coefficient": 0.01,
+        "value_coefficient": 0.5,
+        "max_gradient_norm": 0.5,
+        "epochs": 4
+      }
+    }
+  ]
+}
