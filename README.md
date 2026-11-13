@@ -104,6 +104,14 @@ The included experiment is a one-step contextual routing task with twelve indepe
 
 Training and test examples come from different seeded generators. A training-majority action and a uniform-random policy are evaluated on the same held-out examples as PPO. A known-rule oracle is included to show the task's achievable ceiling. The test set is never passed to a policy or reward-model update. Complete per-seed results and the actual runtime environment are recorded in [artifacts/synthetic-routing.json](artifacts/synthetic-routing.json).
 
+Recorded author-side run: 4,096 training examples and 2,048 held-out examples per seed, CPU PyTorch 2.9.1. The current dependency pin is CPU PyTorch 2.12.1; its unit suite and shorter learning check also pass in CI on Python 3.11 and 3.12. The table reports the recorded full run, not a newly measured 2.12.1 result.
+
+| Seed | PPO mean reward | Uniform random | Training-majority action | Known-rule oracle |
+| --- | --- | --- | --- | --- |
+| 7 | 0.9175 | 0.2510 | 0.2651 | 1.0000 |
+| 19 | 0.8984 | 0.2500 | 0.2373 | 1.0000 |
+| 43 | 0.9243 | 0.2524 | 0.2505 | 1.0000 |
+
 These are synthetic implementation results. They do not establish better conversations, valid emotion inference, calibrated confidence, business uplift, preference alignment or production readiness. An application study would require an approved task and dataset, conversation-group or chronological splits, independently defined outcomes, logged behavior propensities for any off-policy analysis, reward ablations, uncertainty estimates and failure analysis.
 
 ## Persistence and operational boundary
